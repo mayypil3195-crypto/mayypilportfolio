@@ -10,54 +10,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <style>
         html { scroll-behavior: smooth; }
-        body { background: #081317; font-family: 'Cormorant Garamond', serif; color: #D2E4D6; margin: 0; }
+        body { background: #0B1320; font-family: 'Cormorant Garamond', serif; color: #E0F7FA; margin: 0; }
         h1, h2, h3, h4, .font-heading { font-family: 'Cinzel', serif; }
 
+        /* Яркий ледяной градиент: от чисто белого к ярко-голубому циану */
         .gradient-text {
-            background: linear-gradient(135deg, #1FB2B9 0%, #9BB69F 50%, #D2E4D6 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #67E8F9 50%, #00D4E6 100%);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
+            animation: shine 4s linear infinite;
         }
 
         @keyframes shine { to { background-position: 200% center; } }
 
+        /* Энергичное неоновое свечение */
         @keyframes border-glow {
-            0%, 100% { border-color: #164E55; box-shadow: 0 0 5px rgba(22, 78, 85, 0.3); }
-            50% { border-color: #1FB2B9; box-shadow: 0 0 16px rgba(31, 178, 185, 0.4); }
+            0%, 100% { border-color: rgba(0, 212, 230, 0.35); box-shadow: 0 0 8px rgba(0, 212, 230, 0.2); }
+            50% { border-color: #67E8F9; box-shadow: 0 0 18px rgba(103, 232, 249, 0.45); }
         }
 
+        /* Центрированное ледяное свечение фона */
         .hero-section { 
-            background: radial-gradient(circle at center, #102930 0%, #081317 75%); 
+            background: radial-gradient(circle at center, #163252 0%, #0B1320 75%); 
             min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; 
         }
 
         .nav-btn { 
-            border: 1px solid #164E55; background: rgba(31, 178, 185, 0.08); color: #D2E4D6; 
-            padding: 10px 30px; letter-spacing: 2px; transition: 0.3s; text-decoration: none; font-size: 0.9rem;
+            border: 1px solid rgba(103, 232, 249, 0.5); background: rgba(0, 212, 230, 0.08); color: #FFFFFF; 
+            padding: 10px 32px; letter-spacing: 2.5px; transition: 0.3s; text-decoration: none; font-size: 0.9rem;
             animation: border-glow 4s infinite ease-in-out;
         }
-        .nav-btn:hover { background: #164E55; color: #D2E4D6; box-shadow: 0 0 20px #1FB2B9; }
+        .nav-btn:hover { background: #00D4E6; color: #0B1320; box-shadow: 0 0 24px #67E8F9; }
 
         .portfolio-item { 
-            width: 100%; background: rgba(14, 29, 34, 0.85); border: 1.5px solid #164E55; 
+            width: 100%; background: rgba(16, 30, 50, 0.85); border: 1.5px solid rgba(0, 212, 230, 0.35); 
             border-radius: 12px; overflow: hidden; margin-bottom: 2rem; transition: 0.3s ease;
             animation: border-glow 6s infinite ease-in-out;
         }
-        .portfolio-item:hover { transform: scale(1.015); border-color: #1FB2B9; }
-        .portfolio-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1.5px solid #164E55; }
-        .portfolio-info { padding: 1.2rem; background: linear-gradient(to bottom, rgba(31, 178, 185, 0.12), transparent); }
+        .portfolio-item:hover { transform: scale(1.015); border-color: #67E8F9; }
+        .portfolio-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1.5px solid rgba(0, 212, 230, 0.35); }
+        .portfolio-info { padding: 1.2rem; background: linear-gradient(to bottom, rgba(0, 212, 230, 0.12), transparent); }
         
-        .stat-line { border-bottom: 1px solid rgba(155, 182, 159, 0.2); padding: 8px 0; }
-        .divider { height: 1px; background: linear-gradient(90deg, transparent, #1FB2B9, transparent); margin: 3.5rem 0; }
+        .stat-line { border-bottom: 1px solid rgba(224, 247, 250, 0.2); padding: 8px 0; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, #00D4E6, transparent); margin: 3.5rem 0; }
 
+        /* Бейджи ролей */
         .role-badge {
             display: inline-block;
-            background: rgba(31, 178, 185, 0.15);
-            border: 1px solid rgba(155, 182, 159, 0.4);
-            color: #D2E4D6;
-            padding: 3px 10px;
+            background: rgba(0, 212, 230, 0.15);
+            border: 1px solid rgba(103, 232, 249, 0.6);
+            color: #FFFFFF;
+            padding: 3px 12px;
             border-radius: 9999px;
             font-size: 0.75rem;
             letter-spacing: 1px;
@@ -66,18 +70,18 @@
             text-transform: uppercase;
         }
 
-        /* Виниловая пластинка в бирюзово-мятных тонах */
+        /* Виниловая пластинка в голубых тонах */
         .vinyl-disk {
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: radial-gradient(circle, #081317 0%, #081317 28%, #164E55 30%, #164E55 34%, #050b0d 36%, #0d2228 48%, #050b0d 50%, #0d2228 64%, #050b0d 66%, #122f36 82%, #050b0d 84%, #09171b 100%);
-            border: 1px solid rgba(155, 182, 159, 0.35);
+            background: radial-gradient(circle, #0B1320 0%, #0B1320 28%, #16425B 30%, #16425B 34%, #060B12 36%, #12283D 48%, #060B12 50%, #12283D 64%, #060B12 66%, #193856 82%, #060B12 84%, #0B1320 100%);
+            border: 1px solid rgba(103, 232, 249, 0.5);
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 12px rgba(0, 212, 230, 0.3);
             flex-shrink: 0;
         }
 
@@ -85,8 +89,8 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: #164E55;
-            border: 1px solid #1FB2B9;
+            background: #00D4E6;
+            border: 1px solid #FFFFFF;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -96,7 +100,7 @@
             width: 3px;
             height: 3px;
             border-radius: 50%;
-            background: #081317;
+            background: #0B1320;
         }
 
         @keyframes spinVinyl {
@@ -112,6 +116,7 @@
 </head>
 <body>
 
+    <!-- HERO SECTION -->
     <section class="hero-section px-4">
         <div class="max-w-4xl w-full">
             <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-[0.2em] gradient-text">MAYYPIL</h1>
@@ -119,13 +124,14 @@
                 <a href="#about" class="nav-btn">ABOUT</a>
                 <a href="#portfolio" class="nav-btn">PORTFOLIO</a>
             </nav>
-            <div class="flex flex-col items-center opacity-50">
-                <p class="text-[10px] tracking-[0.5em] uppercase mb-4 text-[#9BB69F]">[ click anywhere for music ]</p>
+            <div class="flex flex-col items-center opacity-70">
+                <p class="text-[10px] tracking-[0.5em] uppercase mb-4 text-[#67E8F9]">[ click anywhere for music ]</p>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-24 px-4 bg-[#050D10]">
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 px-4 bg-[#070D17]">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-heading text-center mb-16 tracking-[0.3em] gradient-text">ABOUT ME</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
@@ -134,19 +140,19 @@
                     <div class="stat-line">+ TIMEZONE: GMT+3</div>
                 </div>
                 <div class="order-1 lg:order-2 flex justify-center">
-                    <div class="relative p-2 border border-[#164E55] rounded-xl bg-[#081317] shadow-lg shadow-[#164E55]/30">
+                    <div class="relative p-2 border border-[#00D4E6] rounded-xl bg-[#0B1320] shadow-xl shadow-[#00D4E6]/20">
                         <img src="346f5fccfb9a4e355ecc73860bb228c8.jpg" class="rounded-lg w-full max-w-[300px]" alt="Avatar">
                     </div>
                 </div>
                 <div class="order-3 space-y-6 text-left">
-                    <div class="p-5 border border-[#164E55]/60 rounded-lg bg-[rgba(31,178,185,0.06)]">
-                        <h4 class="font-heading text-sm mb-4 text-[#D2E4D6]">CURRENT VIBE</h4>
-                        <p class="text-[10px] opacity-60 uppercase text-[#9BB69F]">Playing Now:</p>
-                        <p class="italic font-bold text-[#D2E4D6]">"Creo — Flow"</p>
-                        <p class="text-[10px] opacity-60 uppercase mt-4 text-[#9BB69F]">Status:</p>
-                        <p class="text-[#1FB2B9]">● Available for work</p>
-                        <p class="text-[10px] opacity-60 uppercase mt-4 text-[#9BB69F]">Discord:</p>
-                        <p class="text-[11px] font-bold">mayypil139</p>
+                    <div class="p-5 border border-[#00D4E6]/40 rounded-lg bg-[rgba(0,212,230,0.06)] shadow-lg shadow-black/40">
+                        <h4 class="font-heading text-sm mb-4 text-[#FFFFFF]">CURRENT VIBE</h4>
+                        <p class="text-[10px] opacity-70 uppercase text-[#67E8F9]">Playing Now:</p>
+                        <p class="italic font-bold text-[#FFFFFF]">"Creo — Flow"</p>
+                        <p class="text-[10px] opacity-70 uppercase mt-4 text-[#67E8F9]">Status:</p>
+                        <p class="text-[#00D4E6] font-semibold">● Available for work</p>
+                        <p class="text-[10px] opacity-70 uppercase mt-4 text-[#67E8F9]">Discord:</p>
+                        <p class="text-[12px] font-bold text-[#FFFFFF]">mayypil139</p>
                     </div>
                 </div>
             </div>
@@ -155,20 +161,21 @@
 
     <div class="divider max-w-4xl mx-auto"></div>
 
+    <!-- PORTFOLIO SECTION -->
     <section id="portfolio" class="py-20 px-4">
         <div class="max-w-2xl mx-auto">
             <h2 class="text-3xl font-heading text-center mb-12 tracking-[0.3em] gradient-text">PORTFOLIO</h2>
 
-            <!-- КАТЕГОРИЯ: PLANNING & DIRECTION -->
+            <!-- PLANNING & DIRECTION -->
             <div class="mb-14">
-                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#D2E4D6] border-l-2 border-[#1FB2B9] pl-3">
+                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#FFFFFF] border-l-2 border-[#00D4E6] pl-3">
                     PLANNING & DIRECTION
                 </h3>
                 
                 <div class="portfolio-item">
                     <img src="anime_scouts_x.png" class="portfolio-image" alt="Anime Scouts X">
                     <div class="portfolio-info text-left">
-                        <h4 class="text-lg font-heading">Anime Scouts X</h4>
+                        <h4 class="text-lg font-heading text-white">Anime Scouts X</h4>
                         <div class="mt-2">
                             <span class="role-badge">Planner</span>
                             <span class="role-badge">Lead Tester</span>
@@ -179,7 +186,7 @@
                 <div class="portfolio-item">
                     <img src="8f9jvxf.png" class="portfolio-image" alt="Anime Rupture">
                     <div class="portfolio-info text-left">
-                        <h4 class="text-lg font-heading">Anime Rupture</h4>
+                        <h4 class="text-lg font-heading text-white">Anime Rupture</h4>
                         <div class="mt-2">
                             <span class="role-badge">Creative Director</span>
                         </div>
@@ -189,7 +196,7 @@
                 <div class="portfolio-item">
                     <img src="93C15DB5-D1F2-4C3E-80CA-F47689E13EF5.jpg" class="portfolio-image" alt="Horizon Production">
                     <div class="portfolio-info text-left">
-                        <h4 class="text-lg font-heading">Horizon Production</h4>
+                        <h4 class="text-lg font-heading text-white">Horizon Production</h4>
                         <div class="mt-2">
                             <span class="role-badge">Game Designer</span>
                         </div>
@@ -199,7 +206,7 @@
                 <div class="portfolio-item">
                     <img src="noFilter.png" class="portfolio-image" alt="Horizon Production">
                     <div class="portfolio-info text-left">
-                        <h4 class="text-lg font-heading">Horizon Production</h4>
+                        <h4 class="text-lg font-heading text-white">Horizon Production</h4>
                         <div class="mt-2">
                             <span class="role-badge">Planner</span>
                         </div>
@@ -209,7 +216,7 @@
                 <div class="portfolio-item">
                     <img src="mtvs.png" class="portfolio-image" alt="Multiversal">
                     <div class="portfolio-info text-left">
-                        <h4 class="text-lg font-heading">Multiversal</h4>
+                        <h4 class="text-lg font-heading text-white">Multiversal</h4>
                         <div class="mt-2">
                             <span class="role-badge">Planner</span>
                             <span class="role-badge">Balancer</span>
@@ -221,7 +228,7 @@
                 <div class="portfolio-item">
                     <img src="3.png" class="portfolio-image" alt="Eldritch Gates">
                     <div class="portfolio-info text-left">
-                        <h4 class="text-lg font-heading">Eldritch Gates</h4>
+                        <h4 class="text-lg font-heading text-white">Eldritch Gates</h4>
                         <div class="mt-2">
                             <span class="role-badge">Game Director</span>
                             <span class="role-badge">QAM</span>
@@ -231,49 +238,50 @@
                 </div>
             </div>
 
-            <!-- КАТЕГОРИЯ: QUALITY ASSURANCE -->
+            <!-- QUALITY ASSURANCE -->
             <div class="mb-14">
-                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#D2E4D6] border-l-2 border-[#1FB2B9] pl-3">
+                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#FFFFFF] border-l-2 border-[#00D4E6] pl-3">
                     QUALITY ASSURANCE & TESTING
                 </h3>
 
-                <div class="portfolio-item"><img src="Gamepasses-in-Anime-Tactical-Simulator.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Tactical</h4><span class="role-badge">Lead Tester</span><span class="role-badge">ex-QAM</span></div></div>
-                <div class="portfolio-item"><img src="1000026698-1.png" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Vortex</h4><span class="role-badge">Lead Tester</span></div></div>
-                <div class="portfolio-item"><img src="34c9dcaf7c4488dcddd37e762842312f-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Reversal</h4><span class="role-badge">Lead Tester</span></div></div>       
-                <div class="portfolio-item"><img src="arx.webp" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Rangers X</h4><span class="role-badge">Regular Tester</span></div></div>
-                <div class="portfolio-item"><img src="maxresdefault-3731525933.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Manhwa Legends</h4><span class="role-badge">Regular Tester</span></div></div>
-                <div class="portfolio-item"><img src="dd13ad20ce5fd320d8f38a6edb529414-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Conquest</h4><span class="role-badge">Regular Tester</span></div></div>
-                <div class="portfolio-item"><img src="63f8135cad292505f2a5945617c76fdc-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Siege X</h4><span class="role-badge">Regular Tester</span></div></div>
-                <div class="portfolio-item"><img src="79d245e79ae5c0b7e68126766ea53687-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Streamer Defense</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="Gamepasses-in-Anime-Tactical-Simulator.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Tactical</h4><span class="role-badge">Lead Tester</span><span class="role-badge">ex-QAM</span></div></div>
+                <div class="portfolio-item"><img src="1000026698-1.png" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Vortex</h4><span class="role-badge">Lead Tester</span></div></div>
+                <div class="portfolio-item"><img src="34c9dcaf7c4488dcddd37e762842312f-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Reversal</h4><span class="role-badge">Lead Tester</span></div></div>       
+                <div class="portfolio-item"><img src="arx.webp" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Rangers X</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="maxresdefault-3731525933.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Manhwa Legends</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="dd13ad20ce5fd320d8f38a6edb529414-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Conquest</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="63f8135cad292505f2a5945617c76fdc-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Siege X</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="79d245e79ae5c0b7e68126766ea53687-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Streamer Defense</h4><span class="role-badge">Regular Tester</span></div></div>
             </div>
 
-            <!-- КАТЕГОРИЯ: ARCHIVE / FORMER -->
+            <!-- FORMER POSITIONS -->
             <div>
-                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#9BB69F]/70 border-l-2 border-[#164E55] pl-3">
+                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#E0F7FA]/60 border-l-2 border-[#00D4E6]/40 pl-3">
                     FORMER POSITIONS
                 </h3>
 
-                <div class="portfolio-item opacity-80"><img src="fb75b38461f58e7b1bd931226d020446-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Overload</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
-                <div class="portfolio-item opacity-80"><img src="6b3b4a7cbee74f1cf7cc81e8b0e620bb-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Squadron</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
-                <div class="portfolio-item opacity-80"><img src="bf25a881b934e4f1ef53e95d6ed16c6a-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Horizon</h4><span class="role-badge opacity-75">Retired Lead Tester</span></div></div>
-                <div class="portfolio-item opacity-80"><img src="9951f44a635052280c7f8874efb09d47-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Ascendants</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
+                <div class="portfolio-item opacity-80"><img src="fb75b38461f58e7b1bd931226d020446-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Overload</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
+                <div class="portfolio-item opacity-80"><img src="6b3b4a7cbee74f1cf7cc81e8b0e620bb-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Squadron</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
+                <div class="portfolio-item opacity-80"><img src="bf25a881b934e4f1ef53e95d6ed16c6a-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Horizon</h4><span class="role-badge opacity-75">Retired Lead Tester</span></div></div>
+                <div class="portfolio-item opacity-80"><img src="9951f44a635052280c7f8874efb09d47-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading text-white">Anime Ascendants</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center border-t border-[#164E55]/40 opacity-40 text-[10px] tracking-[0.3em] text-[#9BB69F]">
+    <!-- FOOTER -->
+    <footer class="py-12 text-center border-t border-[#00D4E6]/20 opacity-50 text-[10px] tracking-[0.3em] text-[#67E8F9]">
         MAYYPIL &copy; 2026 — BUILT WITH PASSION
     </footer>
 
     <!-- ПЛАВАЮЩИЙ МИНИ-ПЛЕЕР С ВИНИЛОМ -->
     <div class="fixed bottom-6 right-6 z-50">
-        <button id="music-toggle" class="flex items-center gap-3 px-3.5 py-2 rounded-full border border-[#164E55] bg-[#081317]/90 backdrop-blur shadow-lg shadow-black/80 hover:border-[#1FB2B9] transition-all">
+        <button id="music-toggle" class="flex items-center gap-3 px-3.5 py-2 rounded-full border border-[#00D4E6]/60 bg-[#0B1320]/90 backdrop-blur shadow-xl shadow-cyan-950/60 hover:border-[#67E8F9] transition-all">
             <div id="vinyl-record" class="vinyl-disk vinyl-spin vinyl-paused">
                 <div class="vinyl-center">
                     <div class="vinyl-hole"></div>
                 </div>
             </div>
-            <span id="music-status" class="text-[11px] font-heading tracking-wider text-[#D2E4D6] pr-1">PLAY</span>
+            <span id="music-status" class="text-[11px] font-heading tracking-wider text-[#FFFFFF] pr-1">PLAY</span>
         </button>
     </div>
 
