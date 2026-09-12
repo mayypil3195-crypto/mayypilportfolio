@@ -11,7 +11,7 @@
     <style>
         html { scroll-behavior: smooth; }
         body { background: #1E1A2E; font-family: 'Cormorant Garamond', serif; color: #B3A8C9; margin: 0; }
-        h1, h2, h3, .font-heading { font-family: 'Cinzel', serif; }
+        h1, h2, h3, h4, .font-heading { font-family: 'Cinzel', serif; }
 
         .gradient-text {
             background: linear-gradient(135deg, #B3A8C9 0%, #5C4F6E 50%, #B3A8C9 100%);
@@ -25,7 +25,7 @@
 
         @keyframes border-glow {
             0%, 100% { border-color: #5C4F6E; box-shadow: 0 0 5px rgba(92, 79, 110, 0.2); }
-            50% { border-color: #B3A8C9; box-shadow: 0 0 15px rgba(179, 168, 201, 0.4); }
+            50% { border-color: #B3A8C9; box-shadow: 0 0 15px rgba(179, 168, 201, 0.35); }
         }
 
         .hero-section { 
@@ -42,15 +42,73 @@
         .nav-btn:hover { background: #5C4F6E; color: #1E1A2E; box-shadow: 0 0 20px #B3A8C9; }
 
         .portfolio-item { 
-            width: 100%; background: rgba(92, 79, 110, 0.05); border: 1.5px solid #5C4F6E; 
-            border-radius: 12px; overflow: hidden; margin-bottom: 2.5rem; transition: 0.4s ease;
+            width: 100%; background: rgba(92, 79, 110, 0.08); border: 1.5px solid #5C4F6E; 
+            border-radius: 12px; overflow: hidden; margin-bottom: 2rem; transition: 0.3s ease;
             animation: border-glow 6s infinite ease-in-out;
         }
-        .portfolio-item:hover { transform: scale(1.02); }
+        .portfolio-item:hover { transform: scale(1.015); border-color: #B3A8C9; }
         .portfolio-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1.5px solid #5C4F6E; }
         .portfolio-info { padding: 1.2rem; background: linear-gradient(to bottom, rgba(92, 79, 110, 0.15), transparent); }
+        
         .stat-line { border-bottom: 1px solid rgba(179, 168, 201, 0.2); padding: 8px 0; }
-        .divider { height: 1px; background: linear-gradient(90deg, transparent, #5C4F6E, transparent); margin: 4rem 0; }
+        .divider { height: 1px; background: linear-gradient(90deg, transparent, #5C4F6E, transparent); margin: 3.5rem 0; }
+
+        .role-badge {
+            display: inline-block;
+            background: rgba(92, 79, 110, 0.25);
+            border: 1px solid rgba(179, 168, 201, 0.35);
+            color: #B3A8C9;
+            padding: 3px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            margin-right: 6px;
+            margin-top: 6px;
+            text-transform: uppercase;
+        }
+
+        /* Виниловая пластинка */
+        .vinyl-disk {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #1E1A2E 0%, #1E1A2E 28%, #5C4F6E 30%, #5C4F6E 34%, #0a090f 36%, #1c1829 48%, #0a090f 50%, #1c1829 64%, #0a090f 66%, #181524 82%, #0a090f 84%, #120f1c 100%);
+            border: 1px solid rgba(179, 168, 201, 0.3);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            flex-shrink: 0;
+        }
+
+        .vinyl-center {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #5C4F6E;
+            border: 1px solid #B3A8C9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vinyl-hole {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            background: #1E1A2E;
+        }
+
+        @keyframes spinVinyl {
+            100% { transform: rotate(360deg); }
+        }
+        .vinyl-spin {
+            animation: spinVinyl 3.5s linear infinite;
+        }
+        .vinyl-paused {
+            animation-play-state: paused;
+        }
     </style>
 </head>
 <body>
@@ -72,20 +130,20 @@
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-heading text-center mb-16 tracking-[0.3em] gradient-text">ABOUT ME</h2>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-center">
-                <div class="order-2 lg:order-1 space-y-2 text-sm text-left">
+                <div class="order-2 lg:order-1 space-y-3 text-sm text-left">
                     <div class="stat-line">+ NAME: MAYYPIL</div>
                     <div class="stat-line">+ TIMEZONE: GMT+3</div>
                 </div>
                 <div class="order-1 lg:order-2 flex justify-center">
                     <div class="relative p-2 border border-[#5C4F6E] rounded-xl bg-black">
-                        <img src="346f5fccfb9a4e355ecc73860bb228c8.jpg" class="rounded-lg w-full max-w-[300px]">
+                        <img src="346f5fccfb9a4e355ecc73860bb228c8.jpg" class="rounded-lg w-full max-w-[300px]" alt="Avatar">
                     </div>
                 </div>
                 <div class="order-3 space-y-6 text-left">
                     <div class="p-5 border border-[#5C4F6E]/40 rounded-lg bg-[rgba(92,79,110,0.1)]">
                         <h4 class="font-heading text-sm mb-4 text-[#B3A8C9]">CURRENT VIBE</h4>
                         <p class="text-[10px] opacity-60 uppercase">Playing Now:</p>
-                        <p class="italic font-bold text-[#B3A8C9]">"Creo - Flow"</p>
+                        <p class="italic font-bold text-[#B3A8C9]">"Creo — Flow"</p>
                         <p class="text-[10px] opacity-60 uppercase mt-4">Status:</p>
                         <p class="text-green-300">● Available for work</p>
                         <p class="text-[10px] opacity-60 uppercase mt-4">Discord:</p>
@@ -100,26 +158,77 @@
 
     <section id="portfolio" class="py-20 px-4">
         <div class="max-w-2xl mx-auto">
-            <h2 class="text-3xl font-heading text-center mb-16 tracking-[0.3em] gradient-text">PORTFOLIO</h2>
-            <div id="portfolio-list">
-                <div class="portfolio-item"><img src="arx.webp" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Rangers X</h3><p class="text-sm opacity-50">Regular Tester</p></div></div>
-                <div class="portfolio-item"><img src="maxresdefault-3731525933.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Manhwa Legends</h3><p class="text-sm opacity-50">Regular Tester</p></div></div>
-                <div class="portfolio-item"><img src="3.png" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Eldritch Gates</h3><p class="text-sm opacity-50">QAM,CM,Game Director</p></div></div>
-                <div class="portfolio-item"><img src="Gamepasses-in-Anime-Tactical-Simulator.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Tactical</h3><p class="text-sm opacity-50">Lead Tester</p></div></div>
-                <div class="portfolio-item"><img src="mtvs.png" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Multiversal</h3><p class="text-sm opacity-50">QAM, Planner, Balancer</p></div></div>
-                <div class="portfolio-item"><img src="anime_scouts_x.png" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Scouts X</h3><p class="text-sm opacity-50">Planner, Tester</p></div></div>
-                <div class="portfolio-item"><img src="dd13ad20ce5fd320d8f38a6edb529414-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Conquest</h3><p class="text-sm opacity-50">Regular Tester</p></div></div>
-                <div class="portfolio-item"><img src="1000026698-1.png" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Vortex</h3><p class="text-sm opacity-50">Lead Tester</p></div></div>
-                <div class="portfolio-item"><img src="bf25a881b934e4f1ef53e95d6ed16c6a-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Horizon</h3><p class="text-sm opacity-50">Lead Tester</p></div></div>
-                <div class="portfolio-item"><img src="34c9dcaf7c4488dcddd37e762842312f-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Reversal</h3><p class="text-sm opacity-50">Lead Tester</p></div></div>
-                <div class="portfolio-item"><img src="9951f44a635052280c7f8874efb09d47-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Ascendants</h3><p class="text-sm opacity-50">Regular Tester</p></div></div>
-                <div class="portfolio-item"><img src="63f8135cad292505f2a5945617c76fdc-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Siege X</h3><p class="text-sm opacity-50">Regular Tester</p></div></div>
-                <div class="portfolio-item"><img src="79d245e79ae5c0b7e68126766ea53687-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Streamer Defense</h3><p class="text-sm opacity-50">Regular Tester</p></div></div>
+            <h2 class="text-3xl font-heading text-center mb-12 tracking-[0.3em] gradient-text">PORTFOLIO</h2>
 
-                <h2 class="text-2xl font-heading text-center my-12 tracking-[0.3em] opacity-40">FORMER POSITIONS</h2>
+            <!-- КАТЕГОРИЯ: PLANNING & DIRECTION -->
+            <div class="mb-14">
+                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#B3A8C9] border-l-2 border-[#5C4F6E] pl-3">
+                    PLANNING & DIRECTION
+                </h3>
+                
+                <div class="portfolio-item">
+                    <img src="3.png" class="portfolio-image" alt="Eldritch Gates">
+                    <div class="portfolio-info text-left">
+                        <h4 class="text-lg font-heading">Eldritch Gates</h4>
+                        <div class="mt-2">
+                            <span class="role-badge">Game Director</span>
+                            <span class="role-badge">QAM</span>
+                            <span class="role-badge">Community Manager</span>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="portfolio-item"><img src="fb75b38461f58e7b1bd931226d020446-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Overload</h3><p class="text-sm opacity-50">Retired Tester</p></div></div>
-                <div class="portfolio-item"><img src="6b3b4a7cbee74f1cf7cc81e8b0e620bb-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h3 class="text-lg font-heading">Anime Squadron</h3><p class="text-sm opacity-50">Retired Tester</p></div></div>
+                <div class="portfolio-item">
+                    <img src="mtvs.png" class="portfolio-image" alt="Multiversal">
+                    <div class="portfolio-info text-left">
+                        <h4 class="text-lg font-heading">Multiversal</h4>
+                        <div class="mt-2">
+                            <span class="role-badge">Planner</span>
+                            <span class="role-badge">Balancer</span>
+                            <span class="role-badge">QAM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="anime_scouts_x.png" class="portfolio-image" alt="Anime Scouts X">
+                    <div class="portfolio-info text-left">
+                        <h4 class="text-lg font-heading">Anime Scouts X</h4>
+                        <div class="mt-2">
+                            <span class="role-badge">Planner</span>
+                            <span class="role-badge">Tester</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- КАТЕГОРИЯ: QUALITY ASSURANCE -->
+            <div class="mb-14">
+                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#B3A8C9] border-l-2 border-[#5C4F6E] pl-3">
+                    QUALITY ASSURANCE & TESTING
+                </h3>
+
+                <div class="portfolio-item"><img src="Gamepasses-in-Anime-Tactical-Simulator.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Tactical</h4><span class="role-badge">Lead Tester</span><span class="role-badge">ex-QAM</span></div></div>
+                <div class="portfolio-item"><img src="1000026698-1.png" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Vortex</h4><span class="role-badge">Lead Tester</span></div></div>
+                <div class="portfolio-item"><img src="bf25a881b934e4f1ef53e95d6ed16c6a-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Horizon</h4><span class="role-badge">Lead Tester</span></div></div>
+                <div class="portfolio-item"><img src="34c9dcaf7c4488dcddd37e762842312f-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Reversal</h4><span class="role-badge">Lead Tester</span></div></div>
+                
+                <div class="portfolio-item"><img src="arx.webp" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Rangers X</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="maxresdefault-3731525933.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Manhwa Legends</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="dd13ad20ce5fd320d8f38a6edb529414-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Conquest</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="9951f44a635052280c7f8874efb09d47-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Ascendants</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="63f8135cad292505f2a5945617c76fdc-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Siege X</h4><span class="role-badge">Regular Tester</span></div></div>
+                <div class="portfolio-item"><img src="79d245e79ae5c0b7e68126766ea53687-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Streamer Defense</h4><span class="role-badge">Regular Tester</span></div></div>
+            </div>
+
+            <!-- КАТЕГОРИЯ: ARCHIVE / FORMER -->
+            <div>
+                <h3 class="text-xl font-heading text-left mb-6 tracking-[0.2em] text-[#B3A8C9]/60 border-l-2 border-[#5C4F6E]/50 pl-3">
+                    FORMER POSITIONS & ARCHIVE
+                </h3>
+
+                <div class="portfolio-item opacity-80"><img src="fb75b38461f58e7b1bd931226d020446-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Overload</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
+                <div class="portfolio-item opacity-80"><img src="6b3b4a7cbee74f1cf7cc81e8b0e620bb-1.jpg" class="portfolio-image"><div class="portfolio-info text-left"><h4 class="text-lg font-heading">Anime Squadron</h4><span class="role-badge opacity-75">Retired Tester</span></div></div>
             </div>
         </div>
     </section>
@@ -128,15 +237,56 @@
         MAYYPIL &copy; 2026 — BUILT WITH PASSION
     </footer>
 
+    <!-- ПЛАВАЮЩИЙ МИНИ-ПЛЕЕР С ВИНИЛОМ -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="music-toggle" class="flex items-center gap-3 px-3.5 py-2 rounded-full border border-[#5C4F6E] bg-[#161322]/90 backdrop-blur shadow-lg shadow-black/50 hover:border-[#B3A8C9] transition-all">
+            <div id="vinyl-record" class="vinyl-disk vinyl-spin vinyl-paused">
+                <div class="vinyl-center">
+                    <div class="vinyl-hole"></div>
+                </div>
+            </div>
+            <span id="music-status" class="text-[11px] font-heading tracking-wider text-[#B3A8C9] pr-1">PLAY</span>
+        </button>
+    </div>
+
+    <!-- АУДИО ИЗ РЕПОЗИТОРИЯ -->
     <audio id="bg-music" loop>
         <source src="Creo_-_Flow_79710804.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        document.addEventListener('click', function() {
-            const audio = document.getElementById('bg-music');
-            audio.play().catch(e => console.log("Music error:", e));
-        }, { once: true });
+        const audio = document.getElementById('bg-music');
+        const musicToggle = document.getElementById('music-toggle');
+        const vinylRecord = document.getElementById('vinyl-record');
+        const musicStatus = document.getElementById('music-status');
+
+        function setPlayingState(isPlaying) {
+            if (isPlaying) {
+                vinylRecord.classList.remove('vinyl-paused');
+                musicStatus.innerText = 'PAUSE';
+            } else {
+                vinylRecord.classList.add('vinyl-paused');
+                musicStatus.innerText = 'PLAY';
+            }
+        }
+
+        let hasInteracted = false;
+        document.addEventListener('click', function(e) {
+            if (!hasInteracted && !musicToggle.contains(e.target)) {
+                hasInteracted = true;
+                audio.play().then(() => setPlayingState(true)).catch(() => {});
+            }
+        });
+
+        musicToggle.addEventListener('click', function() {
+            hasInteracted = true;
+            if (audio.paused) {
+                audio.play().then(() => setPlayingState(true)).catch(console.error);
+            } else {
+                audio.pause();
+                setPlayingState(false);
+            }
+        });
     </script>
 
 </body>
